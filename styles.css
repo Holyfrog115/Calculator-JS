@@ -15,3 +15,7 @@ h1 {
     align-items: center;
 }
 
+.buttons-display {
+    display: flex;
+    flex-direction: column;
+}
