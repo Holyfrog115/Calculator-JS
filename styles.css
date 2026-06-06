@@ -20,11 +20,20 @@ button:hover {
     background-color: rgb(216, 216, 216);
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .calc-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 320px;
+    border: 1px solid black;
 }
 
 .buttons-display {
