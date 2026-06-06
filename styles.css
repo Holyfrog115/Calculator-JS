@@ -9,9 +9,9 @@ h1 {
 }
 
 button {
-    width: 60px;
-    height: 50px;
-    margin: 2px;
+    width: 4rem;
+    height: 3.5rem;
+    margin: 0.15rem;
     border: 1px solid black;
     border-radius: 10%;
 }
@@ -32,7 +32,7 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 320px;
+    width: 21.5rem;
     border: 1px solid black;
 }
 
@@ -49,3 +49,10 @@ button:hover {
 #equal {
     flex: 1;
 }
+
+.result-display {
+    background-color: rgba(114, 114, 114, 0.356);
+    flex: 1 1 20rem;
+    width: 100%;
+}
+
