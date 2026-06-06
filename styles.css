@@ -17,5 +17,14 @@ h1 {
 
 .buttons-display {
     display: flex;
+}
+
+.col-1, .col-2, .col-3,
+.col-4, .col-5 {
+    display: flex;
     flex-direction: column;
+}
+
+#equal {
+    flex: 1;
 }
