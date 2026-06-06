@@ -79,4 +79,5 @@ button:hover {
     flex: 1 1 4rem;
     width: 100%;
     margin-bottom: 0.15rem;
+    box-shadow: 0 5px 10px -10px black;
 }
