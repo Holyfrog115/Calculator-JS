@@ -56,6 +56,7 @@ button:hover {
     align-items: center;
     width: 22.5rem;
     border: 1px solid black;
+    border-radius: 0.65rem;
 }
 
 .buttons-display {
@@ -77,6 +78,7 @@ button:hover {
     background-color: rgb(242, 242, 242);
     flex: 1 1 20rem;
     width: 100%;
+    border-radius: 0.65rem;
 }
 
 .operation-display {
