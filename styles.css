@@ -14,10 +14,28 @@ button {
     margin: 0.15rem;
     border: 1px solid black;
     border-radius: 10%;
+    background-color: rgb(231, 231, 231);
 }
 
 button:hover {
-    background-color: rgb(216, 216, 216);
+    background-color: rgb(214, 214, 214);
+}
+
+.digit {
+    background-color: rgb(212, 212, 212);
+}
+
+.digit:hover {
+    background-color: rgb(194, 194, 194);;
+}
+
+#equal {
+    background-color: rgb(238, 118, 77);
+    color: white;
+}
+
+#equal:hover {
+    background-color: rgb(245, 130, 92);
 }
 
 .container {
@@ -51,8 +69,14 @@ button:hover {
 }
 
 .result-display {
-    background-color: rgba(114, 114, 114, 0.356);
+    background-color: rgb(242, 242, 242);
     flex: 1 1 20rem;
     width: 100%;
 }
 
+.operation-display {
+    background-color: white;
+    flex: 1 1 4rem;
+    width: 100%;
+    margin-bottom: 0.15rem;
+}
