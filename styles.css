@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -23,6 +25,10 @@ button {
 
 button:hover {
     background-color: rgb(214, 214, 214);
+}
+
+.bold-button {
+    font-weight: bolder;
 }
 
 .digit {
