@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Google Sans', 'Open sans', sans-serif;
+    font-family: 'Open sans', 'Google sans', sans-serif;
 }
 
 header {
@@ -91,6 +91,7 @@ button:hover {
     flex: 1 1 20rem;
     width: 100%;
     border-radius: 0.65rem;
+    font-size: 20px;
 }
 
 .operation-display {
@@ -99,4 +100,9 @@ button:hover {
     width: 100%;
     margin-bottom: 0.15rem;
     box-shadow: 0 5px 10px -10px black;
+    font-size: 20px;
+}
+
+.operation {
+    margin: 10px;
 }
