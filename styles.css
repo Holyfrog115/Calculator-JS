@@ -90,7 +90,7 @@ button:hover {
     background-color: rgb(242, 242, 242);
     flex: 1 1 20rem;
     width: 100%;
-    border-radius: 0.65rem;
+    border-radius: 0.65rem 0.65rem 0 0;
     font-size: 20px;
 }
 
@@ -104,5 +104,5 @@ button:hover {
 }
 
 .operation {
-    margin: 12px;
+    margin: 10px 16px;
 }
