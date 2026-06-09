@@ -1,5 +1,5 @@
 let aNumber = '0';
-let bNumber = '0';
+let bNumber = '';
 let operator = '';
 
 
@@ -50,9 +50,19 @@ function operate(aNumber, bNumber, operator) {
 
 
 function updateOperationDisplay() {
+    const display = document.querySelector('.operation-display');
     const operation = document.querySelector('.operation');
     if (operator === '') {
         operation.textContent = aNumber;
+        display.scrollLeft = display.scrollWidth;
+    }
+    else if (operator !== '' && bNumber == '') {
+        operation.textContent = aNumber + ' ' + operator;
+        display.scrollLeft = display.scrollWidth;
+    }
+    else {
+        operation.textContent = aNumber + ' ' + operator + ' ' + bNumber;
+        display.scrollLeft = display.scrollWidth;
     }
 }
 
@@ -68,8 +78,16 @@ function digitButtons() {
                 else {
                     aNumber += event.target.textContent;
                 }
-                updateOperationDisplay();
             }
+            else {
+                if (bNumber == '0') {
+                    bNumber = event.target.textContent;
+                }
+                else {
+                    bNumber += event.target.textContent;
+                }
+            }
+            updateOperationDisplay();
         }
     });
 }
