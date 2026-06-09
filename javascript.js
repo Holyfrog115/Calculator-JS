@@ -1,5 +1,5 @@
-let aNumber = 0;
-let bNumber = 0;
+let aNumber = '0';
+let bNumber = '0';
 let operator = '';
 
 
@@ -47,3 +47,29 @@ function operate(aNumber, bNumber, operator) {
 
     return result;
 }
+
+
+function digitButtons() {
+    const btns = document.querySelector(".buttons-display");
+    btns.addEventListener("click", (event) => {
+        if (event.target.classList.contains('digit')) {
+            if (operator === '') {
+                if (aNumber == '0') {
+                    aNumber = event.target.textContent;
+                }
+                else {
+                    aNumber += event.target.textContent;
+                }
+                console.log(aNumber);
+            }
+        }
+    });
+}
+
+
+function main() {
+    digitButtons();
+}
+
+
+main();
