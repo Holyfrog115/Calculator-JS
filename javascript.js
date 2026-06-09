@@ -50,19 +50,18 @@ function operate(aNumber, bNumber, operator) {
 
 
 function updateOperationDisplay() {
-    const display = document.querySelector('.operation-display');
     const operation = document.querySelector('.operation');
     if (operator === '') {
         operation.textContent = aNumber;
-        display.scrollLeft = display.scrollWidth;
+        operation.scrollLeft = operation.scrollWidth;
     }
     else if (operator !== '' && bNumber == '') {
         operation.textContent = aNumber + ' ' + operator;
-        display.scrollLeft = display.scrollWidth;
+        operation.scrollLeft = operation.scrollWidth;
     }
     else {
         operation.textContent = aNumber + ' ' + operator + ' ' + bNumber;
-        display.scrollLeft = display.scrollWidth;
+        operation.scrollLeft = operation.scrollWidth;
     }
 }
 
