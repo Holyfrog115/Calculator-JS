@@ -49,6 +49,14 @@ function operate(aNumber, bNumber, operator) {
 }
 
 
+function updateOperationDisplay() {
+    const operation = document.querySelector('.operation');
+    if (operator === '') {
+        operation.textContent = aNumber;
+    }
+}
+
+
 function digitButtons() {
     const btns = document.querySelector(".buttons-display");
     btns.addEventListener("click", (event) => {
