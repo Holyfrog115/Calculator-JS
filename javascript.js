@@ -83,7 +83,25 @@ function digitButtons() {
 
 
 function operationButtons() {
-
+    const btns = document.querySelector(".buttons-display");
+    btns.addEventListener("click", (event) => {
+        if (event.target.id == 'add') {
+            operator = '+';
+            updateOperationDisplay();
+        }
+        else if (event.target.id == 'subtract') {
+            operator = '-';
+            updateOperationDisplay();
+        }
+        else if (event.target.id == 'multiply') {
+            operator = '*';
+            updateOperationDisplay();
+        }
+        else if (event.target.id == 'divide') {
+            operator = '/';
+            updateOperationDisplay();
+        }
+    });
 }
 
 
@@ -96,13 +114,14 @@ function otherButtons() {
             bNumber = '';
             updateOperationDisplay();
         }
-    })
+    });
 }
 
 
 function main() {
     updateOperationDisplay();
     digitButtons();
+    operationButtons();
     otherButtons();
 }
 
