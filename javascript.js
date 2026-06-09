@@ -51,18 +51,8 @@ function operate(aNumber, bNumber, operator) {
 
 function updateOperationDisplay() {
     const operation = document.querySelector('.operation');
-    if (operator === '') {
-        operation.textContent = aNumber;
-        operation.scrollLeft = operation.scrollWidth;
-    }
-    else if (operator !== '' && bNumber == '') {
-        operation.textContent = aNumber + ' ' + operator;
-        operation.scrollLeft = operation.scrollWidth;
-    }
-    else {
-        operation.textContent = aNumber + ' ' + operator + ' ' + bNumber;
-        operation.scrollLeft = operation.scrollWidth;
-    }
+    operation.textContent = aNumber + ' ' + operator + ' ' + bNumber;
+    operation.scrollLeft = operation.scrollWidth;
 }
 
 
@@ -92,9 +82,28 @@ function digitButtons() {
 }
 
 
+function operationButtons() {
+
+}
+
+
+function otherButtons() {
+    const btns = document.querySelector(".buttons-display");
+    btns.addEventListener("click", (event) => {
+        if (event.target.id == 'clear') {
+            aNumber = '0';
+            operator = '';
+            bNumber = '';
+            updateOperationDisplay();
+        }
+    })
+}
+
+
 function main() {
     updateOperationDisplay();
     digitButtons();
+    otherButtons();
 }
 
 
