@@ -68,7 +68,7 @@ function digitButtons() {
                 else {
                     aNumber += event.target.textContent;
                 }
-                console.log(aNumber);
+                updateOperationDisplay();
             }
         }
     });
@@ -76,6 +76,7 @@ function digitButtons() {
 
 
 function main() {
+    updateOperationDisplay();
     digitButtons();
 }
 
