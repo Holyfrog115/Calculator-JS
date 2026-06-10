@@ -56,6 +56,31 @@ function updateOperationDisplay() {
 }
 
 
+function updateHistoryDisplay(answer) {
+    const history = document.querySelector('.history-display');
+
+    const result = document.createElement('div');
+    result.classList.add('result');
+
+    const expression = document.createElement('span');
+    expression.classList.add('expression')
+    expression.textContent = aNumber + operator + bNumber;
+
+    const equals = document.createElement('span');
+    equals.classList.add('equals')
+    equals.textContent = "=";
+
+    const ans = document.createElement('span');
+    ans.classList.add('answer');
+    ans.textContent = answer;
+
+    result.appendChild(expression);
+    result.appendChild(equals);
+    result.appendChild(ans);
+
+    history.appendChild(result);
+}
+
 
 function digitButtons() {
     const btns = document.querySelector(".buttons-display");
