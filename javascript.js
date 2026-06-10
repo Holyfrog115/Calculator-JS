@@ -40,7 +40,7 @@ function operate(aNumber, bNumber, operator) {
             result = multiply(aNumber, bNumber);
             break;
         case '/':
-            if (bNumber == 0) {
+            if (bNumber === 0) {
                 errorHandler(0);
                 return -1;
             }
@@ -161,7 +161,7 @@ function updateHistoryDisplay(answer) {
 
 
 function errorHandler(errorCode) {
-    const errorText = document.querySelector('error-text');
+    const errorText = document.querySelector('.error-text');
     flag = false;
 
     if (errorCode == 0) {
