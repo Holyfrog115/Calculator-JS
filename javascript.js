@@ -124,6 +124,11 @@ function otherButtons() {
             updateOperationDisplay();
         }
     });
+
+    btns.addEventListener('dblclick', (event) => {
+        const historyDisplay = document.querySelector('.history-display');
+        historyDisplay.replaceChildren();
+    })
 }
 
 
