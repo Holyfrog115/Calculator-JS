@@ -112,8 +112,11 @@ function operationButtons() {
     const btns = document.querySelector(".buttons-display");
     btns.addEventListener("click", (event) => {
         if (event.target.id == 'equal') {
-            let reult = operate(aNumber, bNumber, operator);
-
+            let answer = operate(aNumber, bNumber, operator);
+            updateHistoryDisplay(answer);
+            aNumber = answer;
+            operator = '';
+            bNumber = '';
         }
         else if (event.target.id == 'add') {
             operator = '+';
