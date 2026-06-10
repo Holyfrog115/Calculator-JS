@@ -129,8 +129,12 @@ function otherButtons() {
 
 function updateOperationDisplay() {
     const operation = document.querySelector('.operation');
+    const errorText = document.querySelector('.error-text');
+
     operation.textContent = aNumber + ' ' + operator + ' ' + bNumber;
     operation.scrollLeft = operation.scrollWidth;
+
+    errorText.textContent = '';
 }
 
 
