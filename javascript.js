@@ -160,6 +160,16 @@ function updateHistoryDisplay(answer) {
 }
 
 
+function errorHandler(errorCode) {
+    const errorText = document.querySelector('error-text');
+    flag = false;
+
+    if (errorCode == 0) {
+        errorText.textContent = "Division by zero is undefined";
+    }
+}
+
+
 function main() {
     updateOperationDisplay();
     digitButtons();
