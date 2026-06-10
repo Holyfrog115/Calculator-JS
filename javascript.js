@@ -40,6 +40,10 @@ function operate(aNumber, bNumber, operator) {
             result = multiply(aNumber, bNumber);
             break;
         case '/':
+            if (bNumber == 0) {
+                errorHandler(0);
+                return -1;
+            }
             result = divide(aNumber, bNumber);
             break;
         default:
