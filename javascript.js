@@ -1,6 +1,7 @@
 let aNumber = '0';
 let bNumber = '';
 let operator = '';
+let flag = true;
 
 
 function add(a, b) {
@@ -80,11 +81,14 @@ function operationButtons() {
     btns.addEventListener("click", (event) => {
         if (event.target.id == 'equal') {
             let answer = operate(+aNumber, +bNumber, operator);
-            updateHistoryDisplay(answer);
-            aNumber = answer;
-            operator = '';
-            bNumber = '';
-            updateOperationDisplay();
+            if (flag) {
+                updateHistoryDisplay(answer);
+                aNumber = answer;
+                operator = '';
+                bNumber = '';
+                updateOperationDisplay();
+            }
+            flag = true;
         }
         else if (event.target.id == 'add') {
             operator = '+';
