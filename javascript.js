@@ -56,6 +56,7 @@ function updateOperationDisplay() {
 }
 
 
+
 function digitButtons() {
     const btns = document.querySelector(".buttons-display");
     btns.addEventListener("click", (event) => {
@@ -85,7 +86,11 @@ function digitButtons() {
 function operationButtons() {
     const btns = document.querySelector(".buttons-display");
     btns.addEventListener("click", (event) => {
-        if (event.target.id == 'add') {
+        if (event.target.id == 'equal') {
+            let reult = operate(aNumber, bNumber, operator);
+
+        }
+        else if (event.target.id == 'add') {
             operator = '+';
             updateOperationDisplay();
         }
