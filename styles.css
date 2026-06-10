@@ -86,7 +86,7 @@ button:hover {
     flex: 1;
 }
 
-.result-display {
+.history-display {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
