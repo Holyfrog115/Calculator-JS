@@ -117,6 +117,7 @@ function operationButtons() {
             aNumber = answer;
             operator = '';
             bNumber = '';
+            updateOperationDisplay();
         }
         else if (event.target.id == 'add') {
             operator = '+';
