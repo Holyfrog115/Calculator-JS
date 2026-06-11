@@ -83,8 +83,17 @@ function digitButtons() {
 function operationButtons() {
     const btns = document.querySelector(".buttons-display");
     btns.addEventListener("click", (event) => {
-        if (event.target.id == 'equal') {
+        const targetId = event.target.id;
+
+        // Grouping opeartions int lists for readability
+        const mathOperators = ['add', 'subtract', 'multiply', 'divide'];
+        const isOperatorClick = mathOperators.includes(targetId);
+        const isEqualClick = targetId === 'equal';
+        const hasCalculationData = operator != '' && bNumber != '';
+
+        if (isEqualClick || (isOperatorClick && hasCalculationData)) {
             let answer = operate(+aNumber, +bNumber, operator);
+
             if (flag) {
                 updateHistoryDisplay(answer);
                 aNumber = answer;
@@ -94,20 +103,16 @@ function operationButtons() {
             }
             flag = true;
         }
-        else if (event.target.id == 'add') {
-            operator = '+';
-            updateOperationDisplay();
-        }
-        else if (event.target.id == 'subtract') {
-            operator = '-';
-            updateOperationDisplay();
-        }
-        else if (event.target.id == 'multiply') {
-            operator = '*';
-            updateOperationDisplay();
-        }
-        else if (event.target.id == 'divide') {
-            operator = '/';
+
+        const operationsObj = {
+            'add' : '+',
+            'subtract' : '-',
+            'multiply' : '*',
+            'divide' : '/',
+        };
+
+        if (isOperatorClick) {
+            operator = operationsObj[targetId];
             updateOperationDisplay();
         }
     });
