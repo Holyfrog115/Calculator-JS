@@ -1,7 +1,8 @@
 let aNumber = '0';
 let bNumber = '';
 let operator = '';
-let errorerrorFlag = true;
+let errorFlag = false;
+let resultFlag = false;
 
 
 function add(a, b) {
@@ -59,8 +60,9 @@ function digitButtons() {
     btns.addEventListener("click", (event) => {
         if (event.target.classList.contains('digit')) {
             if (operator === '') {
-                if (aNumber == '0') {
+                if (aNumber == '0' || resultFlag) {
                     aNumber = event.target.textContent;
+                    resultFlag = false;
                 }
                 else {
                     aNumber += event.target.textContent;
@@ -100,6 +102,7 @@ function operationButtons() {
                 operator = '';
                 bNumber = '';
                 updateOperationDisplay();
+                resultFlag = true;
             }
             errorFlag = false;
         }
