@@ -1,7 +1,7 @@
 let aNumber = '0';
 let bNumber = '';
 let operator = '';
-let flag = true;
+let errorerrorFlag = true;
 
 
 function add(a, b) {
@@ -94,14 +94,14 @@ function operationButtons() {
         if (isEqualClick || (isOperatorClick && hasCalculationData)) {
             let answer = operate(+aNumber, +bNumber, operator);
 
-            if (flag) {
+            if (!errorFlag) {
                 updateHistoryDisplay(answer);
                 aNumber = answer;
                 operator = '';
                 bNumber = '';
                 updateOperationDisplay();
             }
-            flag = true;
+            errorFlag = false;
         }
 
         const operationsObj = {
@@ -178,7 +178,7 @@ function updateHistoryDisplay(answer) {
 
 function errorHandler(errorCode) {
     const errorText = document.querySelector('.error-text');
-    flag = false;
+    errorFlag = true;
 
     if (errorCode == 0) {
         errorText.textContent = "Division by zero is undefined";
