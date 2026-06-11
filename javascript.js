@@ -85,7 +85,7 @@ function operationButtons() {
     btns.addEventListener("click", (event) => {
         const targetId = event.target.id;
 
-        // Grouping opeartions int lists for readability
+        // Grouping opeartions checks for readability
         const mathOperators = ['add', 'subtract', 'multiply', 'divide'];
         const isOperatorClick = mathOperators.includes(targetId);
         const isEqualClick = targetId === 'equal';
@@ -131,8 +131,10 @@ function otherButtons() {
     });
 
     btns.addEventListener('dblclick', (event) => {
-        const historyDisplay = document.querySelector('.history-display');
-        historyDisplay.replaceChildren();
+        if (event.target.id == 'clear') {
+            const historyDisplay = document.querySelector('.history-display');
+            historyDisplay.replaceChildren();
+        }
     })
 }
 
