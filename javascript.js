@@ -25,30 +25,42 @@ function divide(a, b) {
 }
 
 
-function operate(aNumber, bNumber, operator) {
+function operate() {
     // Determines what function to call for answer
 
     let result = 0;
 
-    switch(operator) {
-        case '+':
-            result = add(aNumber, bNumber);
-            break;
-        case '-':
-            result = subtract(aNumber, bNumber);
-            break;
-        case '*':
-            result = multiply(aNumber, bNumber);
-            break;
-        case '/':
-            if (bNumber === 0) {
-                errorHandler(0);
-                return -1;
-            }
-            result = divide(aNumber, bNumber);
-            break;
-        default:
-            console.log("Unknown operator");
+    if (operator == '' && bNumber == '') {
+        return aNumber;
+    }
+    else if (operator != '' && bNumber == '') {
+        errorHandler(-2)
+        return -2;
+    }
+    else {
+        a = +aNumber;
+        b = +bNumber;
+
+        switch(operator) {
+            case '+':
+                result = add(a, b);
+                break;
+            case '-':
+                result = subtract(a, b);
+                break;
+            case '*':
+                result = multiply(a, b);
+                break;
+            case '/':
+                if (b === 0) {
+                    errorHandler(-1);
+                    return -1;
+                }
+                result = divide(a, b);
+                break;
+            default:
+                console.log("Unknown operator");
+        }
     }
 
     return result;
@@ -94,7 +106,7 @@ function operationButtons() {
         const hasCalculationData = operator != '' && bNumber != '';
 
         if (isEqualClick || (isOperatorClick && hasCalculationData)) {
-            let answer = operate(+aNumber, +bNumber, operator);
+            let answer = operate();
 
             if (!errorFlag) {
                 updateHistoryDisplay(answer);
@@ -183,8 +195,11 @@ function errorHandler(errorCode) {
     const errorText = document.querySelector('.error-text');
     errorFlag = true;
 
-    if (errorCode == 0) {
+    if (errorCode == -1) {
         errorText.textContent = "Division by zero is undefined";
+    }
+    else if (errorCode == -2) {
+        errorText.textContent = "Malformed expression";
     }
 }
 
