@@ -169,7 +169,7 @@ function updateHistoryDisplay(answer) {
 
     const ans = document.createElement('span');
     ans.classList.add('answer');
-    ans.textContent = answer;
+    ans.textContent = Math.round(answer * 1000000) / 1000000;
 
     result.appendChild(expression);
     result.appendChild(equals);
