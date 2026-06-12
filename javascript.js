@@ -143,6 +143,17 @@ function otherButtons() {
             bNumber = '';
             updateOperationDisplay();
         }
+
+        if (event.target.id == 'dot') {
+            if (operator == '' && !aNumber.includes('.')) {
+                aNumber += '.';
+                updateOperationDisplay();
+            }
+            else if (operator != '' && bNumber != '' && !bNumber.includes('.')) {
+                bNumber += '.';
+                updateOperationDisplay();
+            }
+        }
     });
 
     btns.addEventListener('dblclick', (event) => {
