@@ -104,6 +104,12 @@ function operationButtons() {
         const isOperatorClick = mathOperators.includes(targetId);
         const isEqualClick = targetId === 'equal';
         const hasCalculationData = operator != '' && bNumber != '';
+        const operationsObj = {
+            'add' : '+',
+            'subtract' : '-',
+            'multiply' : '*',
+            'divide' : '/',
+        };
 
         if (isEqualClick || (isOperatorClick && hasCalculationData)) {
             let answer = operate();
@@ -118,18 +124,12 @@ function operationButtons() {
             }
             errorFlag = false;
         }
-
-        const operationsObj = {
-            'add' : '+',
-            'subtract' : '-',
-            'multiply' : '*',
-            'divide' : '/',
-        };
-
+        
         if (isOperatorClick) {
             operator = operationsObj[targetId];
             updateOperationDisplay();
         }
+               
     });
 }
 
