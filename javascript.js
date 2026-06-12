@@ -141,6 +141,8 @@ function otherButtons() {
             aNumber = '0';
             operator = '';
             bNumber = '';
+
+            updateOperationDisplay();
         }
 
         else if (event.target.id == 'dot') {
@@ -150,6 +152,8 @@ function otherButtons() {
             else if (operator != '' && bNumber != '' && !bNumber.includes('.')) {
                 bNumber += '.';
             }
+
+            updateOperationDisplay();
         }
 
         else if (event.target.id == 'backspace') {
@@ -162,9 +166,9 @@ function otherButtons() {
             else {
                 bNumber = bNumber.slice(0, -1);
             }
+            
+            updateOperationDisplay();
         }
-
-        updateOperationDisplay();
     });
 
     btns.addEventListener('dblclick', (event) => {
