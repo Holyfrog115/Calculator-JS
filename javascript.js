@@ -141,19 +141,30 @@ function otherButtons() {
             aNumber = '0';
             operator = '';
             bNumber = '';
-            updateOperationDisplay();
         }
 
-        if (event.target.id == 'dot') {
+        else if (event.target.id == 'dot') {
             if (operator == '' && !aNumber.includes('.')) {
                 aNumber += '.';
-                updateOperationDisplay();
             }
             else if (operator != '' && bNumber != '' && !bNumber.includes('.')) {
                 bNumber += '.';
-                updateOperationDisplay();
             }
         }
+
+        else if (event.target.id == 'backspace') {
+            if (operator == '') {
+                aNumber = aNumber.slice(0, -1);
+            }
+            else if (operator != '' && bNumber == '') {
+                operator = '';
+            }
+            else {
+                bNumber = bNumber.slice(0, -1);
+            }
+        }
+
+        updateOperationDisplay();
     });
 
     btns.addEventListener('dblclick', (event) => {
