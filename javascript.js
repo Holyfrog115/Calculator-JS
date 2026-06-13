@@ -43,6 +43,7 @@ function operate() {
     let result = 0;
 
     if (operator == '' && bNumber == '') {
+        unaryOperate();
         return aNumber;
     }
     else if (operator != '' && bNumber == '') {
@@ -79,6 +80,37 @@ function operate() {
     }
 
     return result;
+}
+
+
+function unaryOperate() {
+    let unaryOperator;
+
+    // aNumber operators
+    while (aNumberUnary) {
+        unaryOperator = aNumberUnary.at(0);
+        aNumberUnary = aNumberUnary.slice(1);
+
+        switch (unaryOperator) {
+            // square case
+            case '\u00B2':
+                aNumber = square(+aNumber);
+                break;
+        }
+    }
+
+    // bNumber operators
+    while (bNumberUnary) {
+        unaryOperator = bNumberUnary.at(0);
+        bNumberUnary = bNumberUnary.slice(1);
+
+        switch (unaryOperator) {
+            // square case
+            case '\u00B2':
+                bNumber = square(+bNumber);
+                break;
+        }
+    }
 }
 
 
