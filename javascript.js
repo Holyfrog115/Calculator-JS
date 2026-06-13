@@ -30,6 +30,11 @@ function mod(a, b) {
 }
 
 
+function square(a) {
+    return a * a;
+}
+
+
 function operate() {
     // Determines what function to call for answer
 
