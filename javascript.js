@@ -1,6 +1,8 @@
 let aNumber = '0';
 let bNumber = '';
 let operator = '';
+let aNumberUnary = '';
+let bNumberUnary = '';
 let errorFlag = false;
 let resultFlag = false;
 
@@ -113,8 +115,10 @@ function operationButtons() {
         const targetId = event.target.id;
 
         // Grouping opeartions checks for readability
-        const mathOperators = ['add', 'subtract', 'multiply', 'divide', 'mod'];
-        const isOperatorClick = mathOperators.includes(targetId);
+        const unaryOperators = ['square'];
+        const binaryOperators = ['add', 'subtract', 'multiply', 'divide', 'mod'];
+        const isBinaryOperatorClick = binaryOperators.includes(targetId);
+        const isUnaryOperatorClick = unaryOperators.includes(targetId);
         const isEqualClick = targetId === 'equal';
         const hasCalculationData = operator != '' && bNumber != '';
         const operationsObj = {
@@ -123,9 +127,10 @@ function operationButtons() {
             'multiply' : '*',
             'divide' : '/',
             'mod': 'mod',
+            'square': '\u00B2',
         };
 
-        if (isEqualClick || (isOperatorClick && hasCalculationData)) {
+        if (isEqualClick || (isBinaryOperatorClick && hasCalculationData)) {
             let answer = operate();
 
             if (!errorFlag) {
@@ -138,8 +143,18 @@ function operationButtons() {
             }
             errorFlag = false;
         }
+
+        if (isUnaryOperatorClick) {
+            if (bNumber == '') {
+                aNumberUnary += operationsObj[targetId];
+            }
+            else {
+                bNumberUnary += operationsObj[targetId];
+            }
+            updateOperationDisplay();
+        }
         
-        if (isOperatorClick) {
+        if (isBinaryOperatorClick) {
             operator = operationsObj[targetId];
             updateOperationDisplay();
         }
@@ -155,6 +170,8 @@ function otherButtons() {
             aNumber = '0';
             operator = '';
             bNumber = '';
+            aNumberUnary = '';
+            bNumberUnary = '';
 
             updateOperationDisplay();
         }
@@ -201,7 +218,7 @@ function updateOperationDisplay() {
     const operation = document.querySelector('.operation');
     const errorText = document.querySelector('.error-text');
 
-    operation.textContent = aNumber + ' ' + operator + ' ' + bNumber;
+    operation.textContent = aNumber + aNumberUnary + ' ' + operator + ' ' + bNumber + bNumberUnary;
     operation.scrollLeft = operation.scrollWidth;
 
     errorText.textContent = '';
