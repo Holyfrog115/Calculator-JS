@@ -51,6 +51,7 @@ function operate() {
         return -2;
     }
     else {
+        unaryOperate();
         a = +aNumber;
         b = +bNumber;
 
