@@ -25,6 +25,11 @@ function divide(a, b) {
 }
 
 
+function mod(a, b) {
+    return a % b;
+}
+
+
 function operate() {
     // Determines what function to call for answer
 
