@@ -159,6 +159,9 @@ function otherButtons() {
         else if (event.target.id == 'backspace') {
             if (operator == '') {
                 aNumber = aNumber.slice(0, -1);
+                if (aNumber == '') {
+                    aNumber = '0';
+                }
             }
             else if (operator != '' && bNumber == '') {
                 operator = '';
