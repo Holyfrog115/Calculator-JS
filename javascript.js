@@ -108,7 +108,7 @@ function operationButtons() {
         const targetId = event.target.id;
 
         // Grouping opeartions checks for readability
-        const mathOperators = ['add', 'subtract', 'multiply', 'divide'];
+        const mathOperators = ['add', 'subtract', 'multiply', 'divide', 'mod'];
         const isOperatorClick = mathOperators.includes(targetId);
         const isEqualClick = targetId === 'equal';
         const hasCalculationData = operator != '' && bNumber != '';
@@ -117,6 +117,7 @@ function operationButtons() {
             'subtract' : '-',
             'multiply' : '*',
             'divide' : '/',
+            'mod': 'mod',
         };
 
         if (isEqualClick || (isOperatorClick && hasCalculationData)) {
