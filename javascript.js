@@ -63,6 +63,9 @@ function operate() {
                 }
                 result = divide(a, b);
                 break;
+            case 'mod':
+                result = mod(a, b);
+                break;
             default:
                 console.log("Unknown operator");
         }
