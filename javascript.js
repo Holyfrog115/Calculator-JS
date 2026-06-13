@@ -222,16 +222,26 @@ function otherButtons() {
 
         else if (event.target.id == 'backspace') {
             if (operator == '') {
-                aNumber = aNumber.slice(0, -1);
-                if (aNumber == '') {
-                    aNumber = '0';
+                if (aNumberUnary) {
+                    aNumberUnary = aNumberUnary.slice(0, -1);
+                }
+                else {
+                    aNumber = aNumber.slice(0, -1);
+                    if (aNumber == '') {
+                        aNumber = '0';
+                    }
                 }
             }
             else if (operator != '' && bNumber == '') {
                 operator = '';
             }
             else {
-                bNumber = bNumber.slice(0, -1);
+                if (bNumberUnary) {
+                    bNumberUnary = bNumberUnary.slice(0, -1);
+                }
+                else {
+                    bNumber = bNumber.slice(0, -1);
+                }
             }
             
             updateOperationDisplay();
