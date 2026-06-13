@@ -211,7 +211,7 @@ function updateHistoryDisplay(answer) {
 
     const expression = document.createElement('span');
     expression.classList.add('expression')
-    expression.textContent = aNumber + operator + bNumber;
+    expression.textContent = aNumber + ' ' + operator + ' ' + bNumber;
 
     const equals = document.createElement('span');
     equals.classList.add('equals')
