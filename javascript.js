@@ -176,7 +176,7 @@ function operationButtons() {
             'divide' : '/',
             'mod': 'mod',
             'square': '\u00B2',
-            'sqrt': '\u2070\u22C5\u2075', 
+            'sqrt': '\u221A', 
         };
 
         if (isEqualClick || (isBinaryOperatorClick && hasCalculationData)) {
@@ -194,12 +194,23 @@ function operationButtons() {
         }
 
         if (isUnaryOperatorClick) {
-            if (bNumber == '') {
-                aNumberUnary += ' ' + operationsObj[targetId];
+            if (targetId != 'sqrt') {
+                if (bNumber == '') {
+                    aNumberUnary += operationsObj[targetId];
+                }
+                else {
+                    bNumberUnary += operationsObj[targetId];
+                }
             }
             else {
-                bNumberUnary += ' ' + operationsObj[targetId];
+                if (bNumber == '') {
+                    aSqrt += operationsObj[targetId];
+                }
+                else {
+                    bSqrt += operationsObj[targetId];
+                }
             }
+            
             updateOperationDisplay();
         }
         
@@ -277,7 +288,7 @@ function updateOperationDisplay() {
     const operation = document.querySelector('.operation');
     const errorText = document.querySelector('.error-text');
 
-    operation.textContent = aNumber + aNumberUnary + ' ' + operator + ' ' + bNumber + bNumberUnary;
+    operation.textContent = aSqrt + aNumber + aNumberUnary + ' ' + operator + ' ' + bSqrt +  bNumber + bNumberUnary;
     operation.scrollLeft = operation.scrollWidth;
 
     errorText.textContent = '';
