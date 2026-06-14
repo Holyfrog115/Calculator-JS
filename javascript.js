@@ -106,6 +106,7 @@ function unaryOperate() {
                 break;
         }
     }
+    // aNumber square roots
     while (aSqrt) {
         aSqrt = aSqrt.slice(0, -1);
         aNumber = squareRoot(+aNumber);
@@ -123,6 +124,7 @@ function unaryOperate() {
                 break;
         }
     }
+    // bNumber square roots
     while (bSqrt) {
         bSqrt = bSqrt.slice(0, -1);
         bNumber = squareRoot(+bNumber);
