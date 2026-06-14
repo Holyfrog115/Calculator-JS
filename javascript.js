@@ -37,6 +37,11 @@ function square(a) {
 }
 
 
+function squareRoot(a) {
+    return Math.sqrt(a);
+}
+
+
 function operate() {
     // Determines what function to call for answer
 
