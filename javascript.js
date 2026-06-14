@@ -3,6 +3,8 @@ let bNumber = '';
 let operator = '';
 let aNumberUnary = '';
 let bNumberUnary = '';
+let aSqrt = '';
+let bSqrt = '';
 let errorFlag = false;
 let resultFlag = false;
 
@@ -95,7 +97,7 @@ function unaryOperate() {
     // aNumber operators
     while (aNumberUnary) {
         unaryOperator = aNumberUnary.at(0);
-        aNumberUnary = aNumberUnary.slice(1);
+        aNumberUnary = aNumberUnary.slice(0, -1);
 
         switch (unaryOperator) {
             // square case
@@ -103,6 +105,10 @@ function unaryOperate() {
                 aNumber = square(+aNumber);
                 break;
         }
+    }
+    while (aSqrt) {
+        aSqrt = aSqrt.slice(0, -1);
+        aNumber = squareRoot(+aNumber);
     }
 
     // bNumber operators
@@ -116,6 +122,10 @@ function unaryOperate() {
                 bNumber = square(+bNumber);
                 break;
         }
+    }
+    while (bSqrt) {
+        bSqrt = bSqrt.slice(0, -1);
+        bNumber = squareRoot(+bNumber);
     }
 }
 
@@ -153,7 +163,7 @@ function operationButtons() {
         const targetId = event.target.id;
 
         // Grouping opeartions checks for readability
-        const unaryOperators = ['square'];
+        const unaryOperators = ['square', 'sqrt'];
         const binaryOperators = ['add', 'subtract', 'multiply', 'divide', 'mod'];
         const isBinaryOperatorClick = binaryOperators.includes(targetId);
         const isUnaryOperatorClick = unaryOperators.includes(targetId);
@@ -166,6 +176,7 @@ function operationButtons() {
             'divide' : '/',
             'mod': 'mod',
             'square': '\u00B2',
+            'sqrt': '\u2070\u22C5\u2075', 
         };
 
         if (isEqualClick || (isBinaryOperatorClick && hasCalculationData)) {
@@ -184,10 +195,10 @@ function operationButtons() {
 
         if (isUnaryOperatorClick) {
             if (bNumber == '') {
-                aNumberUnary += operationsObj[targetId];
+                aNumberUnary += ' ' + operationsObj[targetId];
             }
             else {
-                bNumberUnary += operationsObj[targetId];
+                bNumberUnary += ' ' + operationsObj[targetId];
             }
             updateOperationDisplay();
         }
