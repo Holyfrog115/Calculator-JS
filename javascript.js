@@ -5,6 +5,7 @@ let aNumberUnary = '';
 let bNumberUnary = '';
 let aSqrt = '';
 let bSqrt = '';
+let expression = '';
 let errorFlag = false;
 let resultFlag = false;
 
@@ -289,8 +290,9 @@ function otherButtons() {
 function updateOperationDisplay() {
     const operation = document.querySelector('.operation');
     const errorText = document.querySelector('.error-text');
+    expression = aSqrt + aNumber + aNumberUnary + ' ' + operator + ' ' + bSqrt +  bNumber + bNumberUnary;
 
-    operation.textContent = aSqrt + aNumber + aNumberUnary + ' ' + operator + ' ' + bSqrt +  bNumber + bNumberUnary;
+    operation.textContent = expression;
     operation.scrollLeft = operation.scrollWidth;
 
     errorText.textContent = '';
@@ -303,9 +305,9 @@ function updateHistoryDisplay(answer) {
     const result = document.createElement('div');
     result.classList.add('result');
 
-    const expression = document.createElement('span');
-    expression.classList.add('expression')
-    expression.textContent = aNumber + ' ' + operator + ' ' + bNumber;
+    const expressionSpan = document.createElement('span');
+    expressionSpan.classList.add('expression')
+    expressionSpan.textContent = expression;
 
     const equals = document.createElement('span');
     equals.classList.add('equals')
@@ -315,7 +317,7 @@ function updateHistoryDisplay(answer) {
     ans.classList.add('answer');
     ans.textContent = Math.round(answer * 1000000) / 1000000;
 
-    result.appendChild(expression);
+    result.appendChild(expressionSpan);
     result.appendChild(equals);
     result.appendChild(ans);
 
