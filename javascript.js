@@ -166,7 +166,7 @@ function operationButtons() {
         const targetId = event.target.id;
 
         // Grouping opeartions checks for readability
-        const unaryOperators = ['square', 'sqrt'];
+        const unaryOperators = ['square', 'sqrt', 'sign-switch'];
         const binaryOperators = ['add', 'subtract', 'multiply', 'divide', 'mod'];
         const isBinaryOperatorClick = binaryOperators.includes(targetId);
         const isUnaryOperatorClick = unaryOperators.includes(targetId);
@@ -197,20 +197,28 @@ function operationButtons() {
         }
 
         if (isUnaryOperatorClick) {
-            if (targetId != 'sqrt') {
-                if (bNumber == '') {
-                    aNumberUnary += operationsObj[targetId];
-                }
-                else {
-                    bNumberUnary += operationsObj[targetId];
-                }
-            }
-            else {
+            if (targetId == 'sqrt') {
                 if (bNumber == '') {
                     aSqrt += operationsObj[targetId];
                 }
                 else {
                     bSqrt += operationsObj[targetId];
+                }
+            }
+            else if (targetId == 'sign-switch') {
+                if (bNumber == '') {
+                    aNumber = +aNumber * -1;
+                }
+                else {
+                    bNumber = +bNumber * -1;
+                }
+            }
+            else {
+                if (bNumber == '') {
+                    aNumberUnary += operationsObj[targetId];
+                }
+                else {
+                    bNumberUnary += operationsObj[targetId];
                 }
             }
             
