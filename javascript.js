@@ -126,6 +126,9 @@ function unaryOperate() {
             case '%':
                 aNumber = percent(+aNumber);
                 break;
+            case '!':
+                aNumber = factorial(+aNumber);
+                break;
         }
     }
     // aNumber square roots
@@ -151,6 +154,9 @@ function unaryOperate() {
                 else {
                     bNumber = percent(+bNumber);
                 }
+            case '!':
+                bNumber = factorial(+bNumber);
+                break;
         }
     }
     // bNumber square roots
