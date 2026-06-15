@@ -50,7 +50,11 @@ function operate() {
 
     let result = 0;
 
-    if (operator == '' && bNumber == '') {
+    if ((aSqrt && aNumber < 0) || (bSqrt && bNumber < 0)) {
+        errorHandler(-3);
+        return -3
+    }
+    else if (operator == '' && bNumber == '') {
         unaryOperate();
         return aNumber;
     }
@@ -342,6 +346,9 @@ function errorHandler(errorCode) {
     }
     else if (errorCode == -2) {
         errorText.textContent = "Malformed expression";
+    }
+    else if (errorCode == -3) {
+        errorText.textContent = "Math Error."
     }
 }
 
