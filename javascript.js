@@ -202,7 +202,7 @@ function operationButtons() {
 
         if (isUnaryOperatorClick) {
             if (targetId == 'sqrt') {
-                if (bNumber == '') {
+                if (operator == '') {
                     aSqrt += operationsObj[targetId];
                 }
                 else {
@@ -247,6 +247,8 @@ function otherButtons() {
             bNumber = '';
             aNumberUnary = '';
             bNumberUnary = '';
+            aSqrt = '';
+            bSqrt = '';
 
             updateOperationDisplay();
         }
