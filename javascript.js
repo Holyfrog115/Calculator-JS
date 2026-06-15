@@ -116,7 +116,7 @@ function unaryOperate() {
     // aNumber operators
     while (aNumberUnary) {
         unaryOperator = aNumberUnary.at(0);
-        aNumberUnary = aNumberUnary.slice(0, -1);
+        aNumberUnary = aNumberUnary.slice(1);
 
         switch (unaryOperator) {
             // square case
@@ -133,7 +133,7 @@ function unaryOperate() {
     }
     // aNumber square roots
     while (aSqrt) {
-        aSqrt = aSqrt.slice(0, -1);
+        aSqrt = aSqrt.slice(1);
         aNumber = squareRoot(+aNumber);
     }
 
