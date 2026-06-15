@@ -6,6 +6,8 @@
 ## Design
 Basic calculator that imitates linux ubuntu built-in calculator's design. 
 
+<img width="462" height="819" alt="image" src="https://github.com/user-attachments/assets/bb92c481-c89a-4413-85ad-cc0a121a0eea" />
+
 ## Operators
 Calculator has basic binary operators (+, -, *, /) and more fancy unary operators:
  - factorial
