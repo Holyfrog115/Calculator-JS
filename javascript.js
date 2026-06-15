@@ -267,6 +267,9 @@ function otherButtons() {
                 if (aNumberUnary) {
                     aNumberUnary = aNumberUnary.slice(0, -1);
                 }
+                else if (aNumber == '0' && aSqrt) {
+                    aSqrt = aSqrt.slice(0, -1);
+                }
                 else {
                     aNumber = aNumber.slice(0, -1);
                     if (aNumber == '') {
@@ -274,8 +277,11 @@ function otherButtons() {
                     }
                 }
             }
-            else if (operator != '' && bNumber == '') {
+            else if (operator != '' && bNumber == '' && bSqrt == '') {
                 operator = '';
+            }
+            else if (operator != '' && bNumber == '' && bSqrt != '') {
+                bSqrt = bSqrt.slice(0, -1);
             }
             else {
                 if (bNumberUnary) {
@@ -348,7 +354,7 @@ function errorHandler(errorCode) {
         errorText.textContent = "Malformed expression";
     }
     else if (errorCode == -3) {
-        errorText.textContent = "Math Error."
+        errorText.textContent = "Math error"
     }
 }
 
