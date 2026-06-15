@@ -15,6 +15,7 @@ Calculator has basic binary operators (+, -, *, /) and more fancy unary operator
  - modulus
  - square root
  - square
+
 Calcualtor handles only 1 operation per time. So, trying to click second operator, will calculate the result of intial expression, put result as first number and add clicked operator.
 
 ## Error Handling
