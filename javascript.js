@@ -114,6 +114,9 @@ function unaryOperate() {
             case '\u00B2':
                 aNumber = square(+aNumber);
                 break;
+            case '%':
+                aNumber = percent(+aNumber);
+                break;
         }
     }
     // aNumber square roots
@@ -132,6 +135,13 @@ function unaryOperate() {
             case '\u00B2':
                 bNumber = square(+bNumber);
                 break;
+            case '%':
+                if (operator == '+' || operator == '-') {
+                    bNumber = percent(+aNumber * +bNumber);
+                }
+                else {
+                    bNumber = percent(+bNumber);
+                }
         }
     }
     // bNumber square roots
