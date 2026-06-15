@@ -63,7 +63,8 @@ function operate() {
 
     let result = 0;
 
-    if ((aSqrt && aNumber < 0) || (bSqrt && bNumber < 0)) {
+    if ((aSqrt && aNumber < 0) || (bSqrt && bNumber < 0) ||
+        (aNumberUnary.includes('!') && aNumber < 0) || (bNumberUnary.includes('!') && bNumber < 0)) {
         errorHandler(-3);
         return -3
     }
