@@ -154,6 +154,7 @@ function unaryOperate() {
                 else {
                     bNumber = percent(+bNumber);
                 }
+                break;
             case '!':
                 bNumber = factorial(+bNumber);
                 break;
