@@ -185,7 +185,7 @@ function operationButtons() {
         const targetId = event.target.id;
 
         // Grouping opeartions checks for readability
-        const unaryOperators = ['square', 'sqrt', 'sign-switch'];
+        const unaryOperators = ['square', 'sqrt', 'sign-switch', 'percent'];
         const binaryOperators = ['add', 'subtract', 'multiply', 'divide', 'mod'];
         const isBinaryOperatorClick = binaryOperators.includes(targetId);
         const isUnaryOperatorClick = unaryOperators.includes(targetId);
@@ -199,6 +199,7 @@ function operationButtons() {
             'mod': 'mod',
             'square': '\u00B2',
             'sqrt': '\u221A', 
+            'percent': '%',
         };
 
         if (isEqualClick || (isBinaryOperatorClick && hasCalculationData)) {
