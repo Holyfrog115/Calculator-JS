@@ -45,6 +45,11 @@ function squareRoot(a) {
 }
 
 
+function percent(a) {
+    return a / 100;
+}
+
+
 function operate() {
     // Determines what function to call for answer
 
