@@ -8,7 +8,7 @@ Basic calculator that imitates linux ubuntu built-in calculator's design.
 
 <img width="462" height="819" alt="image" src="https://github.com/user-attachments/assets/bb92c481-c89a-4413-85ad-cc0a121a0eea" />
 
-## Operators
+## Operators and Features
 Calculator has basic binary operators (+, -, *, /) and more fancy unary operators:
  - factorial
  - percent
@@ -17,6 +17,8 @@ Calculator has basic binary operators (+, -, *, /) and more fancy unary operator
  - square
 
 Calcualtor handles only 1 operation per time. So, trying to click second operator, will calculate the result of intial expression, put result as first number and add clicked operator.
+
+Calculator, also, has keyboard support for most buttons available in UI.
 
 ## Error Handling
 Calculator handles math errors (divding by zero, factorial of negative number, ...) and prints error message under expression in operation display.
