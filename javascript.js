@@ -399,7 +399,6 @@ function keyboardSupport() {
     const body = document.querySelector('body');
 
     body.addEventListener('keydown', (event) => {
-        console.log(aNumber + operator + bNumber);
         switch (event.key) {
             case '0':
                 const zero = document.querySelector('#zero');
