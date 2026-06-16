@@ -298,6 +298,7 @@ function otherButtons() {
         }
 
         else if (event.target.id == 'backspace') {
+            resultFlag = false;
             if (operator == '') {
                 if (aNumberUnary) {
                     aNumberUnary = aNumberUnary.slice(0, -1);
