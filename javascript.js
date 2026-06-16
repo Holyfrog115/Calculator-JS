@@ -383,14 +383,100 @@ function errorHandler(errorCode) {
     errorFlag = true;
 
     if (errorCode == -1) {
-        errorText.textContent = "Division by zero is undefined";
+        errorText.textContent = 'Division by zero is undefined';
     }
     else if (errorCode == -2) {
-        errorText.textContent = "Malformed expression";
+        errorText.textContent = 'Malformed expression';
     }
     else if (errorCode == -3) {
-        errorText.textContent = "Math error"
+        errorText.textContent = 'Math error'
     }
+}
+
+
+function keyboardSupport() {
+    const body = document.querySelector('body');
+
+    body.addEventListener('keydown', (event) => {
+        switch (event.key) {
+            case '0':
+                const zero = document.querySelector('#zero');
+                zero.click();
+                break;
+            case '1':
+                const one = document.querySelector('#one');
+                one.click();
+                break;
+            case '2':
+                const two = document.querySelector('#two');
+                two.click();
+                break;
+            case '3':
+                const three = document.querySelector('#three');
+                three.click();
+                break;
+            case '4':
+                const four = document.querySelector('#four');
+                four.click();
+                break;
+            case '5':
+                const five = document.querySelector('#five');
+                five.click();
+                break;
+            case '6':
+                const six = document.querySelector('#six');
+                six.click();
+                break;
+            case '7':
+                const seven = document.querySelector('#seven');
+                seven.click();
+                break;
+            case '8':
+                const eight = document.querySelector('#eight');
+                eight.click();
+                break;
+            case '9':
+                const nine = document.querySelector('#nine');
+                nine.click();
+                break;
+            case '.':
+                const dot = document.querySelector('#dot');
+                dot.click();
+                break;
+            case 'Backspace':
+                const backspace = document.querySelector('#backspace');
+                backspace.click();
+                break;
+            case 'Enter':
+                const result = document.querySelector('#equal');
+                result.click();
+                break;
+            case '+':
+                const add = document.querySelector('#add');
+                add.click();
+                break;
+            case '-':
+                const subtract = document.querySelector('#subtract');
+                subtract.click();
+                break;
+            case '*':
+                const multiply = document.querySelector('#multiply');
+                multiply.click();
+                break;
+            case '/':
+                const divide = document.querySelector('#divide');
+                divide.click();
+                break;
+            case '!':
+                const factorial = document.querySelector('#factorial');
+                factorial.click();
+                break;
+            case '%':
+                const percent = document.querySelector('#percent');
+                percent.click();
+                break;
+        }
+    })
 }
 
 
@@ -399,6 +485,7 @@ function main() {
     digitButtons();
     operationButtons();
     otherButtons();
+    keyboardSupport();
 }
 
 
